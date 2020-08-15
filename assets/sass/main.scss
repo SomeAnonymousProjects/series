@@ -164,6 +164,15 @@ body {
                         border: 1px solid black;
                       }
                     }
+
+                    &.hgtv {
+                      border: 1px solid transparent;
+                      padding: 0 .2em;
+
+                      &:hover {
+                        border: 1px solid black;
+                      }
+                    }
                   }
                 }
               }
@@ -283,6 +292,12 @@ body {
           height: 0;
           z-index: -1;
         }
+      }
+    }
+
+    .page-header-title {
+      span {
+        white-space: nowrap;
       }
     }
   }
