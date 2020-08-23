@@ -44,12 +44,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 {{- partial "_header.html" . -}}
 
 <main>
-{{ range .Pages }}
+{{ range (.Pages.ByDate) }}
+    {{ $logoFile := printf "%slogo.png" .RelPermalink }}
+    {{ if fileExists $logoFile }}
     <article class="blog-card">
         <a href="{{ .Permalink }}" class="page-link">
-            <img src="{{ printf "%slogo.png" .Permalink }}" alt="{{ .Title }}" class="page-logo">
+            <img src="{{ $logoFile }}" alt="{{ .Title }}" class="page-logo">
         </a>
     </article>
+    {{ else }}
+    <article class="blog-card wo-logo">
+        <a href="{{ .Permalink }}" class="page-link">
+            <span class="page-title">{{ .Title }}</span>
+        </a>
+    </article>
+    {{ end }}
 {{ end }}
 </main>
 

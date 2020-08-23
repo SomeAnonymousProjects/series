@@ -217,9 +217,31 @@ body {
 
         .page-link {
           display: block;
+          max-width: 200px;
+          border-bottom: none;
+          text-decoration: none;
+          outline: none;
 
           .page-logo {
-            max-width: 200px;
+            width: 100%;
+          }
+        }
+
+        &.wo-logo {
+          width: 100%;
+
+          .page-link {
+            max-width: none;
+
+            .page-title {
+              color: whitesmoke;
+              font-weight: bold;
+              font-size: 2rem;
+              width: 100%;
+              text-align: center;
+              display: block;
+              text-transform: uppercase;
+            }
           }
         }
       }
